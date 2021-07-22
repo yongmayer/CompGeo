@@ -1,0 +1,3 @@
+Image-guided Interpolation (R) and its adjoint (R^T) flow:
+  compute eigentensors: tensors.py -> tpet.dat
+  apply RR^T: rrt.py
