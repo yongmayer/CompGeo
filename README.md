@@ -1,2 +1,2 @@
 # CompGeo
- 
+Computational Geophysics
