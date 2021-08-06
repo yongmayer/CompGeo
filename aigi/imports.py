@@ -1,5 +1,5 @@
 """
-Common imports for analysis of Teapot Dome data.
+Common imports for analysis
 """
 import sys
 

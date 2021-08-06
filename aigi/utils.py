@@ -1,5 +1,5 @@
 """
-utilities for Teapot Dome.
+utilities.
 """
 from imports import *
 

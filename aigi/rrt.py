@@ -23,9 +23,9 @@ rrtDir = "./"
 pnull = -99.9
 
 def main(args):
-#  goTimeMarkers() # computing time and markers 
-#  goAdjointIGI()  # apply R^T
-#  goIGI()         # apply R
+  goTimeMarkers() # computing time and markers 
+  goAdjointIGI()  # apply R^T
+  goIGI()         # apply R
   display(sfile)
   display(pfile)
   display(qfile)

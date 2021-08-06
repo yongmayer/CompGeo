@@ -20,8 +20,8 @@ lsf2 = LocalSemblanceFilter(2,8)
 lsf3 = LocalSemblanceFilter(16,0)
 
 def main(args):
-  makeTensors()
-  semblence()
+  makeTensors() # compute structure tensors
+  semblence()   # compute semblance
   scaleTensors(0.001) # modify eigenvalues with semblences
 #  display()
 
