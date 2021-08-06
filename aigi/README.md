@@ -1,3 +1,3 @@
-# Image-guided Interpolation (R) and its adjoint (R^T) flow:
+# Image-guided Interpolation (IGI):
   compute eigentensors: tensors.py
-  apply RR^T: rrt.py
+  apply IGI: rrt.py

@@ -8,10 +8,7 @@ cfile = wDir+"/./COORD/coords_ns1.txt"
 #############################################################################
 def main(args):
     # set up geometry
-    ns = Coords.countShots(cfile)
-    sc = Coords.getSources(cfile, ns)
-    ng = Coords.countReceivers(cfile, ns)
-    gc = Coords.getReceivers(cfile, ns, ng)
+    ns, sc, ng, gc = setGeom(cfile)
     # prepare velocity and density
     v = readImage(vinit,nz,nx)
     d = add(sub(v,v),1.0)
@@ -27,6 +24,24 @@ def main(args):
     writeImage(wDir+"./MIG/imageLowCut.dat",image)
     return
 
+def setGeom(coord_file):
+    """
+    setup geometry
+
+    Args:
+        coord_file (name): file name contains the acqusition geometry
+
+    Returns:
+        nsrc: number of shots
+        sloc: source locations
+        nrec: number of receivers
+        rloc: receiver locations
+    """
+    nsrc = Coords.countShots(cfile) 
+    sloc = Coords.getSources(cfile, nsrc)
+    nrec = Coords.countReceivers(cfile, nsrc)
+    rloc = Coords.getReceivers(cfile, nsrc, nrec)
+    return nsrc, sloc, nrec, rloc
 #############################################################################
 class RunMain(Runnable):
   def run(self):

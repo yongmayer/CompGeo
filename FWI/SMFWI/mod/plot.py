@@ -1,3 +1,7 @@
+"""
+Sample script to plot shot gather
+"""
+
 import sys
 from org.python.util import PythonObjectInputStream
 from math import *
@@ -12,8 +16,6 @@ from edu.mines.jtk.awt import *
 from edu.mines.jtk.dsp import *
 from edu.mines.jtk.io import *
 from edu.mines.jtk.mosaic import *
-#from edu.mines.jtk.ogl.Gl import *
-#from edu.mines.jtk.sgl import *
 from edu.mines.jtk.util import *
 from edu.mines.jtk.util.ArrayMath import *
 
@@ -48,7 +50,7 @@ def goData():
 def readDat(name,n1,n2):
   """ 
   Reads an image from a file with specified name.
-  name: base name of image file; e.g., "tpsz"
+  name: base name of image file
   """
   fileName = dir+name+".dat"
   image = zerofloat(n1,n2)
@@ -56,26 +58,6 @@ def readDat(name,n1,n2):
   ais.readFloats(image)
   ais.close()
   return image
-
-def readImage(name,n1,n2):
-  """ 
-  Reads an image from a file with specified name.
-  name: base name of image file; e.g., "tpsz"
-  """
-  fileName = name+".dat"
-  image = zerofloat(n1,n2)
-  ais = ArrayInputStream(fileName)
-  ais.readFloats(image)
-  ais.close()
-  return image
-
-def display2(s,g=None,cmin=0,cmax=0):
-  sp = SimplePlot(SimplePlot.Origin.UPPER_LEFT)
-  sp.addColorBar()
-  sp.getPlotPanel().setColorBarWidthMinimum(80)
-  pv = sp.addPixels(s)
-  pv.setInterpolation(PixelsView.Interpolation.NEAREST)
-  pv.setColorModel(ColorMap.JET)
 
 def plot2Data(s,s1,s2,title=None,png=None):
   n1 = len(s[0])
